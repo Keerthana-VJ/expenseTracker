@@ -1,7 +1,7 @@
 # ADR 0001: Database Choice — PostgreSQL
 
 ## Status
-To be Reviewed
+Proposed
 
 ## Context
 The system is a payment ledger platform requiring:
