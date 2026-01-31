@@ -26,22 +26,22 @@ public class UserController {
         this.dataService = dataService;
     }
     
-    @PostMapping("/adduser")
-    public UserDB adduser(@RequestBody UserInput dto)
+    @PostMapping("/addUser")
+    public UserDB adduser(@RequestBody UserInput userInput)
     {
-        return dataService.addcustomer(dto);
+        return dataService.addCustomer(userInput);
     }
 
     @GetMapping("/{id}")
-    public UserDB getuser(@PathVariable UUID id)
+    public UserDB getUser(@PathVariable UUID id)
     {
-        return dataService.getcustomer(id);
+        return dataService.getCustomer(id);
     }
 
-    @GetMapping("/allusers")
-    public List<UserDB>allusers(UserDB userdata)
+    @GetMapping("/allUsers")
+    public List<UserDB>allUsers(UserDB userdata)
     {
-        return dataService.allcustomers(userdata);
+        return dataService.allCustomers(userdata);
     }
 
     

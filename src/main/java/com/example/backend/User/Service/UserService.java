@@ -12,14 +12,14 @@ import com.example.backend.User.Dto.UserInput;
 @Service
 public class UserService {
 
-    private UserRepository dataRepository;
+    private final UserRepository dataRepository;
 
     public UserService(UserRepository dataRepository)
     {
         this.dataRepository = dataRepository;
     } 
 
-   public UserDB addcustomer(UserInput dto){
+   public UserDB addCustomer(UserInput dto){
 
         UserDB user = new UserDB();
         user.setName(dto.getName());
@@ -30,12 +30,12 @@ public class UserService {
         return dataRepository.save(user);
     }
 
-    public UserDB getcustomer(UUID id)
+    public UserDB getCustomer(UUID id)
     {
          return dataRepository.findById(id).orElse(null);
     }
 
-     public List<UserDB>allcustomers(UserDB userdata)
+     public List<UserDB> allCustomers(UserDB userdata)
     {
         return dataRepository.findAll();
     }
